@@ -47,6 +47,7 @@ import mainfunction.Enrollment;
  */
 public class UserGui extends javax.swing.JFrame {
 
+	UserGui context;
 	VideoCapture webSource = null;
 	Mat frame = new Mat();
 	Mat faceCropImg;
@@ -65,6 +66,7 @@ public class UserGui extends javax.swing.JFrame {
     
     public void myInit(){
     	 faceDetector = new CascadeClassifier("E:\\Android\\opencv_2.41\\opencv\\build\\share\\OpenCV\\haarcascades\\haarcascade_frontalface_default.xml");
+    	 context = this;
     }
 
     /**
@@ -442,6 +444,7 @@ public class UserGui extends javax.swing.JFrame {
 				System.out.print("response:"+input);//Arrays.toString(convertToDoubleAr(input)));
 				enrll.saveM();
 				gStatus.setText("enroll success");
+				JOptionPane.showMessageDialog(context, "enroll success.");
             } catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -473,10 +476,14 @@ public class UserGui extends javax.swing.JFrame {
 				System.out.println("Keyresponse:"+input);//Arrays.toString(convertToDoubleAr(input)));
 				System.out.println("OriginalKey:"+Arrays.toString(key));//Arrays.toString(convertToDoubleAr(input)));
 				System.out.println(input.equals(Arrays.toString(key)));
-				if(input.equals(Arrays.toString(key)))
+				if(input.equals(Arrays.toString(key))){
 					gStatus.setText("Sccess");
-				else
+					JOptionPane.showMessageDialog(context, "login success.");
+				}
+				else{
 					gStatus.setText("Fail");
+					JOptionPane.showMessageDialog(context, "login fail.");
+				}
             } catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
