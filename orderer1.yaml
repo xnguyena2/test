@@ -1,0 +1,28 @@
+
+version: '3.3'
+
+services:
+
+  ec2-54-165-142-220.compute-1.amazonaws.com:
+    container_name: ec2-54-165-142-220.compute-1.amazonaws.com
+    image: hyperledger/fabric-orderer:x86_64-1.0.1
+    environment:
+      - ORDERER_GENERAL_LOGLEVEL=debug
+      - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      - ORDERER_GENERAL_GENESISMETHOD=file
+      - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
+      - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp/orderer/msp
+      - ORDERER_GENERAL_TLS_ENABLED=true
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerOrg1/tls/ca.crt]
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
+    command: orderer
+    ports:
+      - 7050:7050
+    volumes:
+      - ../Channel/config/:/etc/hyperledger/configtx
+      - ../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-54-165-142-220.compute-1.amazonaws.com/tls/:/etc/hyperledger/crypto/orderer/tls
+      - ../Channel/crypto-config/peerOrganizations/org1.amazonaws.com/peers/peer1.org1.amazonaws.com/:/etc/hyperledger/crypto/peerOrg1
+      - ../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-54-165-142-220.compute-1.amazonaws.com/:/etc/hyperledger/msp/orderer
