@@ -1,0 +1,27 @@
+{
+	"network-config": {
+		"orderer": {
+			"url": "grpcs://52.206.84.158:7050",
+			"server-hostname": "52.206.84.158.amazonaws.com",
+			"tls_cacerts": "../../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/52.206.84.158.amazonaws.com/tls/ca.crt"
+		},
+		"org1": {
+			"name": "peerOrg1",
+			"mspid": "Org1MSP",
+			"ca": "https://52.91.193.113:7054",
+			"peers": {
+				"peer1": {
+					"requests": "grpcs://52.87.189.241:7051",
+					"events": "grpcs://52.87.189.241:7053",
+					"server-hostname": "52.87.189.241.org1.amazonaws.com",
+					"tls_cacerts": "../../Channel/crypto-config/peerOrganizations/org1.amazonaws.com/peers/52.87.189.241.org1.amazonaws.com/tls/ca.crt"
+				}
+
+			},
+			"admin": {
+				"key": "../../Channel/crypto-config/peerOrganizations/org1.amazonaws.com/users/Admin@org1.amazonaws.com/msp/keystore",
+				"cert": "../../Channel/crypto-config/peerOrganizations/org1.amazonaws.com/users/Admin@org1.amazonaws.com/msp/signcerts"
+			}
+		}
+	}
+}
