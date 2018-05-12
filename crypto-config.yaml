@@ -20,7 +20,11 @@ OrdererOrgs:
   - Name: AWSOrderer
     Domain: amazonaws.com
     Specs:
-      - Hostname: ec2-52-91-201-170.compute-1
+      - Hostname: 35.199.100.173
+      - Hostname: 35.198.49.160
+      - Hostname: 35.198.33.82
+      - Hostname: 35.198.58.143
+      - Hostname: 35.199.127.146
 
 
 
@@ -82,7 +86,7 @@ PeerOrgs:
 #    CA:
 #      - Hostname: ca
     Specs:
-      - Hostname: ec2-18-231-125-206.sa-east-1.compute
+      - Hostname: 18.231.1.233
 
 
     Users:
