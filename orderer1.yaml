@@ -3,9 +3,9 @@ version: '3.3'
 
 services:
 
-  ec2-54-165-142-220.compute-1.amazonaws.com:
-    container_name: ec2-54-165-142-220.compute-1.amazonaws.com
-    image: hyperledger/fabric-orderer:x86_64-1.0.1
+  35.199.100.173.amazonaws.com:
+    container_name: 35.199.100.173.amazonaws.com
+    image: hyperledger/fabric-orderer:x86_64-1.0.6
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -23,6 +23,6 @@ services:
       - 7050:7050
     volumes:
       - ../Channel/config/:/etc/hyperledger/configtx
-      - ../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-54-165-142-220.compute-1.amazonaws.com/tls/:/etc/hyperledger/crypto/orderer/tls
-      - ../Channel/crypto-config/peerOrganizations/org1.amazonaws.com/peers/peer1.org1.amazonaws.com/:/etc/hyperledger/crypto/peerOrg1
-      - ../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-54-165-142-220.compute-1.amazonaws.com/:/etc/hyperledger/msp/orderer
+      - ../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/35.199.100.173.amazonaws.com/tls/:/etc/hyperledger/crypto/orderer/tls
+      - ../Channel/crypto-config/peerOrganizations/org1.amazonaws.com/peers/18.231.1.233.org1.amazonaws.com/:/etc/hyperledger/crypto/peerOrg1
+      - ../Channel/crypto-config/ordererOrganizations/amazonaws.com/orderers/35.199.100.173.amazonaws.com/:/etc/hyperledger/msp/orderer
