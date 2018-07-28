@@ -1,0 +1,34 @@
+{
+    "baseFolder": "E:/GoWorkSpace/src/github.com/corda/cordapp-example/kotlin-source/build/nodes",
+    "cordapps": [
+        "E:/GoWorkSpace/src/github.com/corda/cordapp-example/kotlin-source/build/nodes/PartyA/cordapps/corda-finance-3.2-corda.jar"
+    ],
+    "rootCaPrincipal": "C=UK, L=London, OU=corda, O=R3, CN=Corda Test Node Root CA",
+    "intermediatePrincipal": "C=UK, L=London, OU=corda, O=R3, CN=Corda Test Node Intermediate CA",
+    "listNode": [
+        {
+            "name": "Notary",
+            "org": "Notary",
+            "location": "London",
+            "country": "GB"
+        },
+        {
+            "name": "PartyA",
+            "org": "PartyA",
+            "location": "London",
+            "country": "GB"
+        },
+        {
+            "name": "PartyB",
+            "org": "PartyB",
+            "location": "New York",
+            "country": "US"
+        },
+        {
+            "name": "PartyC",
+            "org": "PartyC",
+            "location": "Paris",
+            "country": "FR"
+        }
+    ]
+}
