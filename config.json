@@ -5,6 +5,7 @@
     ],
     "rootCaPrincipal": "C=UK, L=London, OU=corda, O=R3, CN=Corda Test Node Root CA",
     "intermediatePrincipal": "C=UK, L=London, OU=corda, O=R3, CN=Corda Test Node Intermediate CA",
+    "networkMapPrincipal":"C=UK, L=London, OU=corda, O=R3, CN=Network Map",
     "listNode": [
         {
             "name": "Notary",
